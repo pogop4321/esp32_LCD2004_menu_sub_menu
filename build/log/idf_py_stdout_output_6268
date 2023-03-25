@@ -1,0 +1,54 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\ESP32\print_menu_terminal\build\bootloader\esp-idf\esptool_py && C:\Users\pogop\.espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Users/pogop/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/ESP32/print_menu_terminal/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6700 bytes. 0x900 bytes (8%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+C:/ESP32/print_menu_terminal/main/main.c: In function 'print_menu':
+C:/ESP32/print_menu_terminal/main/main.c:114:23: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  114 |     LCD_writeStr(menus[i]);
+      |                  ~~~~~^~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c: In function 'sub_menu_led':
+C:/ESP32/print_menu_terminal/main/main.c:159:18: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  159 |     LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:162:28: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  162 |     LCD_writeStr(led_states[led_time_state]);
+      |                  ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:180:38: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  180 |                         LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:187:48: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  187 |                         LCD_writeStr(led_states[led_time_state]);
+      |                                      ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+[3/9] Building C object esp-idf/HD44780/CMakeFiles/__idf_HD44780.dir/HD44780.c.obj
+[4/9] Linking C static library esp-idf\HD44780\libHD44780.a
+[5/9] Linking C static library esp-idf\main\libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable print_menu_terminal.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/ESP32/print_menu_terminal/build/print_menu_terminal.bin
+[9/9] cmd.exe /C "cd /D C:\ESP32\print_menu_terminal\build\esp-idf\esptool_py && C:\Users\pogop\.espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Users/pogop/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/ESP32/print_menu_terminal/build/partition_table/partition-table.bin C:/ESP32/print_menu_terminal/build/print_menu_terminal.bin"
+print_menu_terminal.bin binary size 0x38120 bytes. Smallest app partition is 0x100000 bytes. 0xc7ee0 bytes (78%) free.

@@ -1,0 +1,72 @@
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/nvs_function.c.obj
+In file included from C:/ESP32/print_menu_terminal/main/nvs_function.c:12:
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:17:12: warning: 'stored_temperature' initialized and declared 'extern'
+   17 | extern int stored_temperature = 20;
+      |            ^~~~~~~~~~~~~~~~~~
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:18:12: warning: 'pump_time_state' initialized and declared 'extern'
+   18 | extern int pump_time_state = 5; // Index of the "OFF" state
+      |            ^~~~~~~~~~~~~~~
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:19:12: warning: 'led_time_state' initialized and declared 'extern'
+   19 | extern int led_time_state = 0;
+      |            ^~~~~~~~~~~~~~
+[2/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from C:/ESP32/print_menu_terminal/main/main.c:12:
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:17:12: warning: 'stored_temperature' initialized and declared 'extern'
+   17 | extern int stored_temperature = 20;
+      |            ^~~~~~~~~~~~~~~~~~
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:18:12: warning: 'pump_time_state' initialized and declared 'extern'
+   18 | extern int pump_time_state = 5; // Index of the "OFF" state
+      |            ^~~~~~~~~~~~~~~
+C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:19:12: warning: 'led_time_state' initialized and declared 'extern'
+   19 | extern int led_time_state = 0;
+      |            ^~~~~~~~~~~~~~
+C:/ESP32/print_menu_terminal/main/main.c: In function 'print_menu':
+C:/ESP32/print_menu_terminal/main/main.c:204:23: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  204 |     LCD_writeStr(menus[i]);
+      |                  ~~~~~^~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c: In function 'sub_menu_led':
+C:/ESP32/print_menu_terminal/main/main.c:249:18: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  249 |     LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:252:28: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  252 |     LCD_writeStr(led_states[led_time_state]);
+      |                  ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:270:38: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  270 |                         LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:277:48: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  277 |                         LCD_writeStr(led_states[led_time_state]);
+      |                                      ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+[3/11] Linking C static library esp-idf\main\libmain.a
+[4/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\ESP32\print_menu_terminal\build\bootloader\esp-idf\esptool_py && C:\Users\pogop\.espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Users/pogop/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/ESP32/print_menu_terminal/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6700 bytes. 0x900 bytes (8%) free.
+[5/9] Generating ld/sections.ld
+[6/9] Linking CXX executable print_menu_terminal.elf
+FAILED: print_menu_terminal.elf 
+cmd.exe /C "cd . && C:\Users\pogop\.espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe -mlongcalls -Wno-frame-address  @CMakeFiles\print_menu_terminal.elf.rsp -o print_menu_terminal.elf  && cd ."
+c:/users/pogop/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(nvs_function.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:19: multiple definition of `led_time_state'; esp-idf/main/libmain.a(main.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:19: first defined here
+c:/users/pogop/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(nvs_function.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:18: multiple definition of `pump_time_state'; esp-idf/main/libmain.a(main.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:18: first defined here
+c:/users/pogop/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(nvs_function.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:17: multiple definition of `stored_temperature'; esp-idf/main/libmain.a(main.c.obj):C:/ESP32/print_menu_terminal/main/GLOB_VAR.h:17: first defined here
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

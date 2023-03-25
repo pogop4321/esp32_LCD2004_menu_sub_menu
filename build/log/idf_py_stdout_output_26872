@@ -1,0 +1,59 @@
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/nvs_function.c.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\ESP32\print_menu_terminal\build\bootloader\esp-idf\esptool_py && C:\Users\pogop\.espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe C:/Users/pogop/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/ESP32/print_menu_terminal/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6700 bytes. 0x900 bytes (8%) free.
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+C:/ESP32/print_menu_terminal/main/main.c: In function 'print_menu':
+C:/ESP32/print_menu_terminal/main/main.c:158:23: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  158 |     LCD_writeStr(menus[i]);
+      |                  ~~~~~^~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c: In function 'sub_menu_led':
+C:/ESP32/print_menu_terminal/main/main.c:203:18: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  203 |     LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:206:28: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  206 |     LCD_writeStr(led_states[led_time_state]);
+      |                  ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:224:38: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  224 |                         LCD_writeStr(bright_state_to_string(current_bright_state));
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+C:/ESP32/print_menu_terminal/main/main.c:231:48: warning: passing argument 1 of 'LCD_writeStr' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  231 |                         LCD_writeStr(led_states[led_time_state]);
+      |                                      ~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:8:
+C:/ESP32/print_menu_terminal/components/HD44780/include/HD44780.h:8:25: note: expected 'char *' but argument is of type 'const char *'
+    8 | void LCD_writeStr(char* str);
+      |                   ~~~~~~^~~
+In file included from C:/ESP32/print_menu_terminal/main/main.c:12:
+C:/ESP32/print_menu_terminal/main/main.c: At top level:
+C:/ESP32/print_menu_terminal/main/EXTERNAL_FUNC.h:12:13: warning: 'pump_task' used but never defined
+   12 | static void pump_task(void *arg);
+      |             ^~~~~~~~~
+C:/ESP32/print_menu_terminal/main/EXTERNAL_FUNC.h:13:13: warning: 'led_task' used but never defined
+   13 | static void led_task(void *arg);
+      |             ^~~~~~~~
+[4/9] Linking C static library esp-idf\main\libmain.a
+[5/9] Generating ld/sections.ld
+[6/9] Linking CXX executable print_menu_terminal.elf
+FAILED: print_menu_terminal.elf 
+cmd.exe /C "cd . && C:\Users\pogop\.espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe -mlongcalls -Wno-frame-address  @CMakeFiles\print_menu_terminal.elf.rsp -o print_menu_terminal.elf  && cd ."
+c:/users/pogop/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(main.c.obj):(.literal.app_main+0x28): undefined reference to `pump_task'
+c:/users/pogop/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/11.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: esp-idf/main/libmain.a(main.c.obj):(.literal.app_main+0x30): undefined reference to `led_task'
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
